@@ -48,4 +48,14 @@ public class AdjList {
     public List<AdjListEntry> getEdges(int u) {
         return adjList.getOrDefault(u, new ArrayList<>());
     }
+
+    public void print() {
+        for (Map.Entry<Integer, List<AdjListEntry>> entry : adjList.entrySet()) {
+            System.out.print("Vertex: " + entry.getKey() + " ");
+            for (AdjListEntry edge : entry.getValue()) {
+                System.out.print(edge.getNode() + ", ");
+            }
+            System.out.println();
+        }
+    }
 }

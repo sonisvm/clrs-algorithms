@@ -45,7 +45,24 @@ tree but a DFS forest.
 
 * DFS of an undirected graph only yields tree edges and forward edges.
 
+* A directed graph is acyclic only if a DFS does not yield any back edges.
 
+### Topological Sort
+
+* Only possible for acyclic graphs.
+
+* Topological sorting can be achieved by first performing a DFS on the graph and then sorting the nodes according to 
+their finish time. The source node (assuming there is only one) will have the **highest finish time**.
+
+* Total running time = O(V + E).
+
+### Strongly Connected Components (directed graphs)
+
+* In an SCC, every vertex v is reachable from every other vertex v.
+
+* A graph G and its reverse G<sup>R</sup> have the same SCC. G<sup>R</sup> is obtained by reversing every edge in G
+
+* Total running time = O(V + E).
 
 
 
