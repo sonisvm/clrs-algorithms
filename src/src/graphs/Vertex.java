@@ -3,6 +3,7 @@ package graphs;
 public class Vertex {
     private int node;
     private int finishTime;
+    private int key;
 
     public Vertex(int node) {
         this.node = node;
@@ -23,5 +24,13 @@ public class Vertex {
 
     public int getNode() {
         return node;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 }

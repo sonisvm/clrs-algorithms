@@ -4,7 +4,7 @@
 of all the adjacency lists = 2|E|.
 
 * For both directed and undirected graphs, the adjacency-list representation has the desirable property that the amount 
-of memory it requires = O(V+E).
+of memory it requires = O(V + E).
 
 ### Breadth-First Search
 
@@ -21,14 +21,14 @@ visited nodes.
 
 * The shortest path from node s to v can be obtaining by traversing the parent array from node v back to s.
 
-* Total running time = O(V + E).
+* Total running time = **O(V + E)**.
 
 ### Depth-First Search
 
 * In contrast to BFS, DFS algorithm runs on multiple source nodes. Hence, the result is not a DFS
 tree but a DFS forest.
 
-* Total running time = O(V + E).
+* Total running time = **O(V + E)**.
 
 * Following properties hold in a DFS tree
     - [u.start, u.finish] and [v.start, v.finish] are completely disjoint and neither u nor v are descendants of each
@@ -54,7 +54,7 @@ tree but a DFS forest.
 * Topological sorting can be achieved by first performing a DFS on the graph and then sorting the nodes according to 
 their finish time. The source node (assuming there is only one) will have the **highest finish time**.
 
-* Total running time = O(V + E).
+* Total running time = **O(V + E)**.
 
 ### Strongly Connected Components (directed graphs)
 
@@ -62,7 +62,31 @@ their finish time. The source node (assuming there is only one) will have the **
 
 * A graph G and its reverse G<sup>R</sup> have the same SCC. G<sup>R</sup> is obtained by reversing every edge in G
 
-* Total running time = O(V + E).
+* Total running time = **O(V + E)**.
+
+### Minimum Spanning Tree
+
+* MST algorithms are greedy algorithms and they use the cut property to build the MST.
+
+* Cut property: Let A be a subset of E included in a MST. Then let (S, V-S) be the cut containing A. If (u,v) is the 
+lightest edge crossing the cut, then adding {(u, v)} U A will also be a subset of some MST.
+
+### Kruskal's algorithm
+
+* Running time depends on how the disjoint set data structure is implemented. If it is implemented using 
+union-by-rank and path compression techniques, then total running time = O(ElogE + ElogV).
+
+* Since E = O(V<sup>2</sup>), log E = O(log V). So running time can be simplified to **O(ElogV)**.
+
+* Works with negative weights also.
+
+### Prim's algorithm
+
+* Works with negative weights.
+
+* Total running time = **O(ElogV)**.
+
+
 
 
 
