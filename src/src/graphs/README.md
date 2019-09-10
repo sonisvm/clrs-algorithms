@@ -71,7 +71,7 @@ their finish time. The source node (assuming there is only one) will have the **
 * Cut property: Let A be a subset of E included in a MST. Then let (S, V-S) be the cut containing A. If (u,v) is the 
 lightest edge crossing the cut, then adding {(u, v)} U A will also be a subset of some MST.
 
-### Kruskal's algorithm
+#### Kruskal's algorithm
 
 * Running time depends on how the disjoint set data structure is implemented. If it is implemented using 
 union-by-rank and path compression techniques, then total running time = O(ElogE + ElogV).
@@ -80,11 +80,41 @@ union-by-rank and path compression techniques, then total running time = O(ElogE
 
 * Works with negative weights also.
 
-### Prim's algorithm
+#### Prim's algorithm
 
 * Works with negative weights.
 
-* Total running time = **O(ElogV)**.
+* Total running time = **O((V + E)logV)**.
+
+### Single Source Shortest Path
+
+* Shortest path between u and v contains other shortest paths within it.
+
+* If graph contains a negative weight cycle reachable from s, then shortest paths are not well defined.
+
+* Shortest paths have **no cycles**. Since it is acyclic, SP contains V vertices and V-1 edges.
+
+* Shortest paths are not necessarily unique, and neither are shortest-paths trees.
+
+#### Bellman-Ford algorithm
+
+* Works with negative weights. If there is a negative weight cycle reachable from source, the algorithm detects it.
+
+* Total running time = **O(VE)**.
+
+#### Single source SP in DAG
+
+* Even if there are negative weights, negative cycles don't exist in a DAG.
+
+* Total running time = **O(V + E)**.
+
+#### Dijkstra's algorithm
+
+* Works only with non negative edge weights.
+
+* Total running time = **O((V + E)log V)**.
+
+
 
 
 

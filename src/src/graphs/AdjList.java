@@ -58,4 +58,8 @@ public class AdjList {
             System.out.println();
         }
     }
+
+    public Map<Integer, List<AdjListEntry>> getAdjList() {
+        return adjList;
+    }
 }

@@ -22,4 +22,8 @@ public class AdjMatrix {
     public int[] getEdges(int u) {
         return this.adjMatrix[u];
     }
+
+    public int getSize() {
+        return adjMatrix.length;
+    }
 }
